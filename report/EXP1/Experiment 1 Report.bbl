@@ -1,0 +1,99 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{guide}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=cb95c005ce89df973a0db120d3e7392c}{%
+           family={计算机硬件实验室},
+           familyi={计\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {东南大学}%
+      }
+      \list{language}{1}{%
+        {chinese}%
+      }
+      \list{location}{1}{%
+        {南京}%
+      }
+      \list{organization}{1}{%
+        {东南大学}%
+      }
+      \strng{namehash}{cb95c005ce89df973a0db120d3e7392c}
+      \strng{fullhash}{cb95c005ce89df973a0db120d3e7392c}
+      \strng{bibnamehash}{cb95c005ce89df973a0db120d3e7392c}
+      \strng{authorbibnamehash}{cb95c005ce89df973a0db120d3e7392c}
+      \strng{authornamehash}{cb95c005ce89df973a0db120d3e7392c}
+      \strng{authorfullhash}{cb95c005ce89df973a0db120d3e7392c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{lansortorder}{1}
+      \field{title}{《数字逻辑与计算机体系结构》实验指导书}
+      \field{usera}{A}
+      \field{userd}{chinese}
+      \field{userf}{chinese}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \keyw{guide}
+    \endentry
+    \entry{github:fpga-verilog}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9d6732e9a329a379545f64239404c344}{%
+           family={{yasho2249}},
+           familyi={y\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{9d6732e9a329a379545f64239404c344}
+      \strng{fullhash}{9d6732e9a329a379545f64239404c344}
+      \strng{bibnamehash}{9d6732e9a329a379545f64239404c344}
+      \strng{authorbibnamehash}{9d6732e9a329a379545f64239404c344}
+      \strng{authornamehash}{9d6732e9a329a379545f64239404c344}
+      \strng{authorfullhash}{9d6732e9a329a379545f64239404c344}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{lansortorder}{4}
+      \field{note}{[Online; accessed 07-November-2021]}
+      \field{title}{fpga-verilog --- GitHub}
+      \field{usera}{EB}
+      \field{userd}{english}
+      \field{userf}{english}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/yasho2249/fpga-verilog
+      \endverb
+      \verb{url}
+      \verb https://github.com/yasho2249/fpga-verilog
+      \endverb
+      \keyw{github:fpga-verilog,[Online; accessed 07-November-2021]}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

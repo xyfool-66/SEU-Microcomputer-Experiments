@@ -1,0 +1,12 @@
+*.pdf
+*.dot
+*.txt
+*.cmd
+*.vcd
+*.log
+*.asc
+*.bin
+*.json
+*.out
+*.dblite
+*.history
