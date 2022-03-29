@@ -135,7 +135,7 @@
 \fancyhf{}
 %\rhead{\small \@expID~\@expauthor}
 %\lhead{\small \@expname}
-\chead{\small 《微机系统与接口实验报告\qquad 实验者\quad \@expauthor}
+\chead{\small 《微机系统与接口实验报告》\qquad 实验者\quad \@expauthor}
 \cfoot{\small \thepage~/~\pageref*{LastPage}}
 
 %% 添加参考文献 bib 文件
