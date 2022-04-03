@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.30)  2 APR 2022 00:10
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.30)  2 APR 2022 01:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1723,8 +1723,6 @@ Package fontspec Info: Font family 'STFangsong(0)' created for font
 (fontspec)             <->"STFangsong/OT:language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 12.
 )
 \tf@toc=\write8
 \openout8 = `"Experiment 1 Report.toc"'.
@@ -1737,9 +1735,9 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstlang2.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2020/03/24 1.8d listings language file
-)
-File: fig/rlt1.png Graphic file (type bmp)
-<fig/rlt1.png>
+) [3]
+File: fig/task4.png Graphic file (type bmp)
+<fig/task4.png>
 
 
 Package fontspec Warning: Font "Heiti SC Light" does not contain requested
@@ -1771,35 +1769,15 @@ Package fontspec Info: Font family 'HeitiSCLight(0)' created for font 'Heiti
 (fontspec)             Light/BI/OT:language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-[3]
-Overfull \hbox (7.96039pt too wide) in paragraph at lines 176--189
- [][] 
- []
+[4] [5]
 
-[4]
-File: fig/task4.png Graphic file (type bmp)
-<fig/task4.png>
- [5]
-Overfull \hbox (4.16908pt too wide) in paragraph at lines 240--241
-[]\TU/SongtiSCLight(0)/m/n/10.95 实 验 前 先 检 查 寄 存 器 情 况：| \TU/lmtt/m/n/10.95 DS=4013H, BX=0000H, SI=0000H\TU/SongtiSCLight(0)/m/n/10.95 ；|  初 始 化 数 据 段 情 况：| \TU/lmtt/m/n/10.95 DS:[1000H]=FF,
- []
+LaTeX Warning: Reference `task6.1' on page 6 undefined on input line 203.
 
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 225.
 
-Overfull \hbox (1.25665pt too wide) in paragraph at lines 258--259
-[]\TU/SongtiSCLight(0)/m/n/10.95 设 \TU/lmtt/m/n/10.95 AX \TU/SongtiSCLight(0)/m/n/10.95 寄 存 器 中 的 内 容 为 \TU/lmtt/m/n/10.95 1111H\TU/SongtiSCLight(0)/m/n/10.95 ，| \TU/lmtt/m/n/10.95 BX \TU/SongtiSCLight(0)/m/n/10.95 寄 存 器 中 的 内 容 为 \TU/lmtt/m/n/10.95 2222H\TU/SongtiSCLight(0)/m/n/10.95 ，| \TU/lmtt/m/n/10.95 DS:0010H \TU/SongtiSCLight(0)/m/n/10.95 单 元 中 的 内 容 为 \TU/lmtt/m/n/10.95 3333H\TU/SongtiSCLight(0)/m/n/10.95 。|
- []
+LaTeX Warning: Reference `task6.2' on page 6 undefined on input line 230.
 
-[6] [7]
-File: fig/rlt7.png Graphic file (type bmp)
-<fig/rlt7.png>
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 303.
-
-Overfull \hbox (16.9589pt too wide) in paragraph at lines 308--309
-\TU/SongtiSCLight(0)/m/n/10.95 方 法 为：|  通 过 \TU/lmtt/m/n/10.95 shift+cmd+. \TU/SongtiSCLight(0)/m/n/10.95 找 到 根 目 录 下\TU/lmtt/m/n/10.95 /Library/Preferences/DOSBox 0.74-3-1 Preferences
- []
-
-[8]
 
 Package biblatex Warning: Using fallback definition for \mkbibdateshort.
 (biblatex)                The command should be defined in the .lbx file.
@@ -1807,6 +1785,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdateshort.
 (biblatex)                loaded, is faulty or does not contain a definition
 (biblatex)                for \mkbibdateshort.
 
+[6]
 
 Package biblatex Warning: Using fallback definition for \mkbibdateshort.
 (biblatex)                The command should be defined in the .lbx file.
@@ -1816,7 +1795,10 @@ Package biblatex Warning: Using fallback definition for \mkbibdateshort.
 
 
 AED: lastpage setting LastPage
-[9] (./Experiment 1 Report.aux)
+[7] (./Experiment 1 Report.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `"Experiment 1 Report".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
 Package logreq Info: Writing requests to '"Experiment 1 Report".run.xml'.
@@ -1824,12 +1806,12 @@ Package logreq Info: Writing requests to '"Experiment 1 Report".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54467 strings out of 476919
- 1282996 string characters out of 5821840
- 2359903 words of memory out of 5000000
- 73518 multiletter control sequences out of 15000+600000
- 421291 words of font info for 165 fonts, out of 8000000 for 9000
+ 54329 strings out of 476919
+ 1276251 string characters out of 5821840
+ 2354638 words of memory out of 5000000
+ 73393 multiletter control sequences out of 15000+600000
+ 418778 words of font info for 151 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 116i,12n,118p,750b,4875s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 116i,12n,118p,750b,5220s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Experiment 1 Report.pdf (9 pages).
+Output written on Experiment 1 Report.pdf (7 pages).

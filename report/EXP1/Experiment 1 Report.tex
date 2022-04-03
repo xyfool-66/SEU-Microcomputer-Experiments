@@ -237,13 +237,13 @@
 \end{figure}
 
 \subsection{不同寻址方式传递数据}
-实验前先检查寄存器情况：\texttt{DS=4013H, BX=0000H, SI=0000H}；初始化数据段情况：\texttt{DS:[0100H]=FF, DS:[2020H]=00}。传递数据的代码段如下：
+实验前先检查寄存器情况：\texttt{DS=4013H, BX=0000H, SI=0000H}；初始化数据段情况：\texttt{DS:[1000H]=FF, DS:[2020H]=00}。传递数据的代码段如下：
 \begin{lstlisting}[language={[x86masm]Assembler},title=code]
     % 直接寻址
-    MOV AL,[0100H]
+    MOV AL,[1000H]
     MOV [2020H],AL
     % 基址寻址
-    MOV AH,0100[BX]
+    MOV AH,1000[BX]
     MOV [2020H],AH
     % 变址寻址
     MOV AH,0100[SI]
