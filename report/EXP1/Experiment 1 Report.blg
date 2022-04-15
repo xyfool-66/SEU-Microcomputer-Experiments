@@ -1,15 +1,9 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'Experiment 1 Report.blg'
-[64] biber-darwin:340> INFO - === Fri Apr  1, 2022, 01:27:13
-[81] Biber.pm:415> INFO - Reading 'Experiment 1 Report.bcf'
-[195] Biber.pm:952> INFO - Found 3 citekeys in bib section 0
-[208] Biber.pm:4340> INFO - Processing section 0
-[217] Biber.pm:4531> INFO - Looking for bibtex format file 'ref/ref.bib' for section 0
-[218] bibtex.pm:1689> INFO - LaTeX decoding ...
-[221] bibtex.pm:1494> INFO - Found BibTeX data source 'ref/ref.bib'
-[260] UCollate.pm:68> INFO - Overriding locale 'nil' defaults 'variable = shifted' with 'variable = non-ignorable'
-[260] UCollate.pm:68> INFO - Overriding locale 'nil' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[260] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'nil'
-[260] Biber.pm:4174> INFO - No sort tailoring available for locale 'nil'
-[261] bbl.pm:654> INFO - Writing 'Experiment 1 Report.bbl' with encoding 'UTF-8'
-[262] bbl.pm:757> INFO - Output to Experiment 1 Report.bbl
+[58] biber-darwin:340> INFO - === Wed Apr 13, 2022, 21:44:46
+[71] Biber.pm:415> INFO - Reading 'Experiment 1 Report.bcf'
+[180] Biber.pm:952> INFO - Found 3 citekeys in bib section 0
+[192] Biber.pm:4340> INFO - Processing section 0
+[200] Biber.pm:4531> INFO - Looking for bibtex format file 'ref/ref.bib' for section 0
+[200] bibtex.pm:1689> INFO - LaTeX decoding ...
+[204] bibtex.pm:1494> INFO - Found BibTeX data source 'ref/ref.bib'

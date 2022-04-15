@@ -1,0 +1,20 @@
+DATA   SEGMENT
+NUM    DB 38,55,26,12,23  
+SUM    DB ?
+DATA   ENDS
+
+CODE SEGMENT
+ASSUME CS:CODE,DS:DATA
+START: MOV  AX,DATA
+       MOV  DS,AX    
+       MOV  CX,05
+       LEA  BX,NUM
+       SUB  AL,AL
+NEXT:  ADD  AL,[BX]
+       INC  BX
+       LOOP NEXT
+       MOV  SUM,AL
+CODE ENDS
+END START
+
+

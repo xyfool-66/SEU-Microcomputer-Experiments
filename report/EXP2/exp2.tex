@@ -1,0 +1,426 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             东南大学数电实验报告 LaTeX 模板
+%%                SEU-Circuit-Report.cls
+%% https://github.com/Teddy-van-Jerry/SEU_Digital_Report
+%% ======================================================
+%% 版本信息：
+%% v1.0 (Nov. 07, 2021)
+%% ------------------------------------------------------
+%% 模板制作：
+%% Teddy van Jerry, (me@teddy-van-jerry.org)
+%% * GitHub: https://github.com/Teddy-van-Jerry
+%% * Website: https://teddy-van-jerry.org
+%% * Blog: https://blog.teddy-van-jerry.org
+%% ------------------------------------------------------
+%% 使用说明：
+%% 1. 编译使用 XeLaTeX 和 Biber
+%% 2. 报告基本信息通过修改导言区以 exp 开头的命令
+%% 3. 参考文献位于 ref/ref.bib
+%% 4. 报告模板依据 MIT License 开源共享
+%% ------------------------------------------------------
+%% Copyright 2021 (c) Teddy van Jerry
+%%
+%% Permission is hereby granted, free of charge, to any
+%% person obtaining a copy of this software and
+%% associated documentation files (the "Software"), to
+%% deal in the Software without restriction, including
+%% without limitation the rights to use, copy, modify,
+%% merge, publish, distribute, sublicense, and/or sell
+%% copies of the Software, and to permit persons to whom
+%% the Software is furnished to do so, subject to the
+%% following conditions:
+%%
+%% The above copyright notice and this permission notice
+%% shall be included in all copies or substantial
+%% portions of the Software.
+%% 
+%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+%% ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+%% LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+%% FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+%% EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+%% FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+%% AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+%% FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+%% USE OR OTHER DEALINGS IN THE SOFTWARE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 使用实验报告模板类（字体大小 11pt 约为五号字）
+\documentclass[11pt]{SEU-Digital-Report}
+
+%%%%%%%%%%%%%%%%%%%% 报告基本信息 %%%%%%%%%%%%%%%%%%%%
+\expno{二} % 实验序号
+\expname{基本算术和逻辑运算} % 实验名称
+\expauthor{薛宇飞 } % 姓名
+\expID{04020235} % 学号
+\expmates{} % 同组
+\expmatesID{} % 学号（同组）
+\expmajor{信息工程} % 专业
+\explab{金智楼硬件实验室} % 实验室
+\expdate{\today} % 实验日期
+\expreportdate{\today} % 实验日期
+\expgrade{} % 成绩评定
+\exptutor{裴文江} % 评阅教师
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{xeCJK}
+\usepackage{threeparttable} %table添加注释
+\usepackage{colortbl}
+\newcommand{\grayrow}{\rowcolor[rgb]{ .906, .902, .902}}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+
+%% 报告正文
+\begin{document}
+
+% 打印封面页
+\exptitlepage
+
+\tableofcontents
+\newpage
+
+\section{实验目的与内容}       
+\begin{enumerate}
+    \item 熟悉算术和逻辑运算指令的功能；
+    \item 结合实验教材 \cite{book,guide}，进一步了解标志寄存器各标志位的意义和指令执行对它的影响。   
+\end{enumerate}
+
+\section{实验任务}
+实验全部资料及完整代码详见薛宇飞的 \texttt{GitHub} 主页 \cite{mygit}。
+
+\subsection{运行并检查标志位}
+采用单步执行方式执行下列各程序段，检查各标志位的情况。
+\begin{lstlisting}[language={[x86masm]Assembler},title=code1]
+    MOV AX,0A0A0H
+    ADD AX,0FFFFH
+    MOV CX,0FF00H  
+    ADD AX,CX
+    SUB AX,AX
+    INC AX
+    OR CX,00FFH
+    AND CX,0FOFH
+    MOV [0010],CX
+\end{lstlisting}
+
+\begin{analyze}{指令对标志位的影响}{}
+    第2行执行后，\texttt{AX=0A09FH}，结果溢出，\texttt{CF=1, SF=1, PF=1}；\\
+    第4行执行后，属于正常加法，\texttt{AX=9F9FH}，符号为未改变；\\
+    第5行执行后，AX=0000H，结果为正零，无借位，\texttt{ZF=1, CF=0, SF=0}；\\
+    第6行执行后，AX=0001H，\texttt{PF=0, CF=0, ZF=0}；\\
+    第7行执行后，CX低8位置1，\texttt{PF=1, SF=1}；\\
+    第8步执行后，CX的4-7位和12-15位清零，\texttt{SF=0, PF=1}；\\
+    第9步执行后，\texttt{DS:[0010]=0F, DS:[0011]=0F}；\\
+    其余指令为简单的\texttt{MOV}操作。
+\end{analyze}
+
+\begin{lstlisting}[language={[x86masm]Assembler},title=code2]
+    MOV BL,25H
+    MOV [0010],04H
+    MOV AL,[0010]
+    MUL BL
+\end{lstlisting}
+
+\begin{analyze}{指令对标志位的影响}{}
+    第2行指令输入后，指令默认变成了\texttt{MOV BYTE PTR [0100],04H}，执行后，\texttt{DS:[0100]=04}；\\
+    第4行，属于无符号数的字节乘法运算，源操作数为BL，目标操作数为AL，结果存放于AX=0094H，符号位\texttt{OF=0, CF=0}。
+\end{analyze}
+
+\begin{lstlisting}[language={[x86masm]Assembler},title=code3]
+    MOV BL,04H
+    MOV WORD PTR [0010],0080H
+    MOV AX,[0010]
+    DIV BL
+\end{lstlisting}
+
+\begin{analyze}{指令对标志位的影响}{}
+    第2行指令执行后，\texttt{DS:[0011]=00, DS:[0010]=80}，这是因为指定了\texttt{MOV}指令移入一个字，所以高位的\texttt{00H}被存放到了\texttt{DS:[0011]}中；\\
+    第4行，属于无符号数的字节除法，默认目标操作数为\texttt{AX}，商放在\texttt{AL}，余数放在\texttt{AH}，所以\texttt{AX=0020H}，对所有标志位均无影响。
+\end{analyze}
+
+\begin{lstlisting}[language={[x86masm]Assembler},title=code4]
+    MOV AX,00
+    DEC AX
+    ADC AX,3FFFH
+    ADD AX,AX
+    NOT AX
+    SUB AX,3
+    OR AX,0FBFDH
+    AND AX,0AFCFH
+    SHL AX,l
+    RCL AX,1   
+\end{lstlisting}
+
+\begin{analyze}{指令对标志位的影响}{}
+    第2行指令执行后，\texttt{AX=FFFFH}，最高位有借位，看作有符号数为负数，低8位的1个数为偶数，所以\texttt{AF=1, SF=1, PF=1}；\\
+    第3行指令执行后，\texttt{AX=3FFEH}，结果最高位有进位，\texttt{CF=1}，正常加法完成后再加1；\\
+    第4行指令执行后，\texttt{AX=7FFC}，低半字节向高半字节有进位，所以\texttt{AF=1}；\\
+    第5行执行之前\texttt{AX=0111 1111 1111 1100B}，执行后所有位取反得\texttt{AX=1000 0000 0000 0011B=8003H}；
+    第6行执行后，\texttt{AX=8000H}，标志位\texttt{SF=1, PF=1}；\\
+    第7行，\texttt{FBFDH=1111 1011 1111 1101B}，指令表示将第0、2、3、4、5、6、7、8、9、11、12、13、14、15位置1，得到\texttt{AX=FBFDH}；\\
+    第8行，\texttt{AFCFH=1010 1111 1100 1111B}，指令表示将第4、5、12、14位清零，得到\texttt{AX=ABCDH}；\\
+    第9行指令执行后，将\texttt{AX}向左移位得到\texttt{AX=579AH}，最高位为1挪进\texttt{CF}中，并且\texttt{SF=0, ZF=0, PF=0}。
+    \begin{note}{移位位数}
+        移位数若超过1，需存放于\texttt{CL}中使用。
+    \end{note}
+    第10行指令执行后，\texttt{AX=AF35H}，并且原始最高位0置入\texttt{CF}中。
+    \begin{idea}{移位思想}
+        左右移位相当于将原数字（有符号数或无符号数）乘除2。
+    \end{idea}
+    \begin{note}{\texttt{RCL/RCR}移位}
+        以左移为例，依次向左移位，将最高位放入\texttt{CF}中，并把最低位用\texttt{CF}原来的值补齐
+    \end{note}
+\end{analyze}
+
+\subsection{求和与作积}
+将寄存器\texttt{BX}作地址指针，自\texttt{BX}所指的内存单元\texttt{(0010H)}开始连续存放着三个无符号数\texttt{(10H、04H、30H)}。试编写程序分别求它们的和与积，并将结果存放在这三个数之后的单元中。
+\begin{lstlisting}[language={[x86masm]Assembler},title=code]
+    MOV BYTE PTR [BX],10H  ;初始化操作
+    MOV BYTE PTR [BX+1],04H
+    MOV BYTE PTR [BX+2],30H
+    MOV AX,0000H  ;清空中转单元格
+    ADD AL,[BX]
+    ADD AL,[BX+1]
+    ADD AL,[BX+2]
+    MOV WORD PTR [BX+3],AX  ;求和并存放结果
+    MOV AX,0000H  ;清空中转单元格
+    MOV AL,[BX]
+    MOV CL,[BX+1]
+    MUL CL
+    MOV CL,[BX+2]
+    MUL CL
+    MOV WORD PTR [BX+5],AX  ;求积并存放结果
+\end{lstlisting}
+
+实验结果见图 \ref{fig:rlt2}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/rlt2.png}
+    \caption{实验二结果}
+    \label{fig:rlt2} 
+\end{figure}
+
+\begin{note}{实验中遇到的问题}{}
+    \begin{enumerate}
+        \item \texttt{MUL/IMUL}的目标操作数只能是AL，且源操作数存储器寻址有\texttt{BX, BP, SI, DI}寻址；
+        \item 将数据移入存储器需要指明是\texttt{WORD PTR}或者\texttt{BYTE PTR}，如果是双操作数，一个是寄存器，一个是存储器，则数据类型由寄存器确定；
+        \item 字节运算的结果可能是字，因此将结果移入存储器前需要事先规划好位置。
+    \end{enumerate}
+\end{note}
+
+\subsection{编写功能程序段1}
+\begin{enumerate}
+    \item 传送\texttt{15H}到\texttt{AL}寄存器；
+    \item 将\texttt{AL}的内容乘以2；
+    \item 传送\texttt{15H}到\texttt{BL}寄存器；
+    \item \texttt{AL}的内容乘以\texttt{BL}的内容。
+    \item 求出最后结果\texttt{AX}。
+\end{enumerate}
+
+\begin{lstlisting}[language={[x86masm]Assembler},title=code]
+    MOV AL,15H
+    SHL AL,1
+    MOV BL,15H
+    MUL BL  ;最终得到结果：AL=0372H
+\end{lstlisting}
+
+\subsection{编写功能程序段2}
+\begin{enumerate}
+    \item 从地址\texttt{DS:0000H}单元中，传送一个数据\texttt{58H}到\texttt{AL}寄存器；
+    \item 把\texttt{AL}寄存器的内容右移两位；
+    \item 再把\texttt{AL}寄存器的内容与字节单元\texttt{DS:0001H}中的数据\texttt{12H}相乘；
+    \item 将乘积存入字单元\texttt{DS:0002H}中。
+\end{enumerate}
+
+\begin{lstlisting}[language={[x86masm]Assembler},title=code]
+    ;首先修改DS:0000H的值为58H，DS:0001H为12H
+    MOV AL,[0000]
+    MOV CL,02H
+    SHR AL,CL
+    MOV BL,[0001]
+    MUL BL
+    MOV WORD PTR [0002],AX
+\end{lstlisting}
+
+实验结果见图 \ref{fig:rlt4}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/rlt4.png}
+    \caption{实验四结果}
+    \label{fig:rlt4} 
+\end{figure}
+
+\subsection{清除程序段}
+假设下面的程序段用来清除数据段中相应字存储单元的内容(即零送到这些存储单元中去)，其偏移地址从\texttt{0010H}到\texttt{001FH}。
+\begin{lstlisting}[language={[x86masm]Assembler},title=code]
+          MOV SI,0010H
+    NEXT: MOV WORD PTR [SI],00
+          ADD SI,2
+          CMP SI,_____   
+          JNE NEXT
+\end{lstlisting}
+
+空白处应补充完整的指令为\texttt{CMP SI,001FH}。
+
+假设要清除偏移地址从\texttt{001FH}到\texttt{0010H}字存储单元中的内容(即由高地址到低地址清零)，试编写程序段。
+\begin{lstlisting}[language={[x86masm]Assembler},title=code]
+          MOV SI,001FH
+    NEXT: MOV WORD PTR [SI],00
+          SUB SI,2
+          CMP SI,0010H
+          JNE NEXT
+\end{lstlisting}
+
+需要调整上一个实验中的第3行为\texttt{SUB SI,2}。
+
+\begin{note}{\texttt{TD}使用}{}
+    在\texttt{TD}中，\texttt{NEXT}指令无法输入，需要换成相对应的偏移地址。
+\end{note}
+
+\subsection{尝试\texttt{BCD}码调整指令}
+\subsubsection{\texttt{BCD}码任务1}
+假设数据段：\texttt{[0000H]=18H, [0001H]=34H, [0010H]=98H, [0011H]=27H}。执行表 \ref{tab:task6.1}。
+\begin{table}[htbp]
+    \centering
+    \caption{任务表格\label{tab:task6.1}}
+    \bgroup\def\arraystretch{1.5}
+    \setlength{\tabcolsep}{4.5mm}
+        \begin{tabular}{l|c|c}
+          \toprule
+          \textbf{指令} & \textbf{分析} & \texttt{AL}\\
+          \midrule\midrule
+          \grayrow  \texttt{MOV AL,[0000H]} & 简单的\texttt{MOV}操作 & -\\
+                    \texttt{ADD AL,[0010H] } & 简单的\texttt{ADD}操作，其中\texttt{CF=0} & \texttt{B0}\\
+          \grayrow  \texttt{DAA} & 对AX进行\texttt{+6+60}操作，注意此时\texttt{CF=1} & \texttt{16}\\
+                    \texttt{MOV [0020H],AL}& 简单的\texttt{MOV}操作 & -\\
+          \grayrow  \texttt{MOV AL,[0001H]} & 简单的\texttt{MOV}操作 & -\\
+                    \texttt{ADC AL,[0011H]} & 考虑\texttt{CF}进位的加法操作 & \texttt{5C}\\
+          \grayrow  \texttt{DAA} & 对AX进行+6操作 & 62\\
+                    \texttt{MOV [0021H],AL} &简单的\texttt{MOV}操作 & -\\
+          \bottomrule
+        \end{tabular}
+    \egroup
+\end{table}
+
+最后得到两个压缩\texttt{BCD}码\texttt{3418}与\texttt{2798}的和为\texttt{6216}。
+
+\begin{analyze}{\texttt{DAA}指令}{}
+    \texttt{DAA}操作逻辑：\\
+    \texttt{AL}低4位大于9或\texttt{AF=1}，\texttt{AL=AL+6}且\texttt{AF}置1；\\
+    \texttt{AL}高4位大于9或\texttt{CF=1}，\texttt{AL=AL+60}且\texttt{CF}置1。
+\end{analyze}
+
+\subsubsection{\texttt{BCD}码任务2}
+假设数据段：\texttt{[0000H]=23H, [0001H]=43H, [0010H]=61H, [0011H]=25H}。执行表 \ref{tab:task6.2}。
+\begin{table}[htbp]
+    \centering
+    \caption{任务表格\label{tab:task6.2}}
+    \bgroup\def\arraystretch{1.5}
+    \setlength{\tabcolsep}{4.5mm}
+        \begin{tabular}{l|c|c}
+          \toprule
+          \textbf{指令} & \textbf{分析} & \texttt{AL}\\
+          \midrule\midrule
+          \grayrow  \texttt{MOV AL,[0000H]} & 简单的\texttt{MOV}操作 & -\\
+                    \texttt{SUB AL,[0010H] } & 简单的\texttt{SUB}操作，同时\texttt{CF=1}& \texttt{C2}\\
+          \grayrow  \texttt{DAS} & 具体操作为\texttt{AL=AL-60}并且\texttt{CF=1} & \texttt{62}\\
+                    \texttt{MOV [0020H],AL}& 简单的\texttt{MOV}操作 & -\\
+          \grayrow  \texttt{MOV AL,[0001H]} & 简单的\texttt{MOV}操作 & -\\
+                    \texttt{SBB AL,[0011H]} & 考虑借位的减法 & \texttt{1D}\\
+          \grayrow  \texttt{DAS} & 具体操作为\texttt{AL=AL-6} & \texttt{17}\\
+                    \texttt{MOV [0021H],AL} & 简单的\texttt{MOV}操作 & -\\
+          \bottomrule
+        \end{tabular}
+    \egroup
+\end{table}
+
+最后得到两个压缩\texttt{BCD}码\texttt{4323}减去\texttt{2561}为\texttt{1762}。
+
+\begin{analyze}{\texttt{DAS}指令}{}
+    \texttt{DAS}操作逻辑：\\
+    \texttt{AL}低4位大于9或\texttt{AF=1}，\texttt{AL=AL-6}且\texttt{AF}置1；\\
+    \texttt{AL}高4位大于9或\texttt{CF=1}，\texttt{AL=AL-60}且\texttt{CF}置1。
+\end{analyze}
+
+\section{实验总结}
+实验总结已随文附在“注意”、“思考”、“分析”中。
+
+% 打印参考文献
+\addcontentsline{toc}{section}{参考文献}
+\printbibliography
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 序号段落样例
+\begin{enumerate}
+    \item    
+\end{enumerate}
+
+% 表格样例
+\begin{table}[htbp]
+    \centering
+    \caption{题目 \label{tab:parameters}}
+    \bgroup\def\arraystretch{1.5}
+    \setlength{\tabcolsep}{4.5mm}
+      \begin{threeparttable}%要写注释，得加这行
+        \begin{tabular}{c|c}
+          \toprule
+          \textbf{11} & \textbf{22}\\
+          \midrule\midrule
+          \grayrow  & \\
+           & \\
+          \grayrow  & \\ 
+          \bottomrule
+        \end{tabular}
+
+        %注释
+        \begin{tablenotes}%注释开始
+        \footnotesize
+        \item[$\ast$] $\mathtt{rand}\ [a, b]\ (a<b)$ is a random value generated between $a$ and $b$.
+        \end{tablenotes}%注释结束
+      \end{threeparttable}%要写注释，得加这行
+
+    \egroup
+\end{table}
+
+% 插入图片样例
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/rlt7.png}
+    \caption{}
+    \label{fig:xxx}
+\end{figure}
+
+% 并排两张图样例
+\begin{figure}[htbp]
+    \centering
+    \subfloat[原理图]{
+        \includegraphics[height=2cm]{fig/oscillation_init.png}
+        \label{subfig:oscillation_init}
+    }
+    \subfloat[等效图]{
+        \includegraphics[height=2cm]{fig/oscillation_real.png}
+        \label{subfig:oscillation_real}
+    }
+    \caption{}
+    \label{fig:oscillation_circuit}
+\end{figure}
+
+% 注意样例（idea/analyze 分别表示思考和分析）
+\begin{note}{题目}{}
+    内容
+\end{note}
+
+% 代码样例
+\begin{lstlisting}[language={[x86masm]Assembler},title=code]
+    mycode
+\end{lstlisting}
