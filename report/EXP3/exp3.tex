@@ -173,7 +173,7 @@
     START: MOV  AX,DATA
            MOV  DS,AX     ;DATA数据段传入DS
            LEA  BX,NUM    ;获取NUM偏移地址，传入指针BX
-           MOV  CX,07     ;循环次数为7
+           MOV  CX,06     ;循环次数为6
            MOV  AL ,[BX]  ;初始假设第一个数据是最大值
     AGAIN: INC  BX        ;BX指针后移1位
            CMP  AL,[BX]   ;比较数据大小并更新标志位
@@ -258,7 +258,7 @@
     ASSUME CS:CODE,DS:DATA
     START: MOV  AX,DATA   
            MOV  DS,AX    ;将DATA数据传入DS
-           LEA  DX,NUM   ;NUM地址传送给DX
+           LEA  BX,NUM   ;NUM地址传送给BX
            MOV  CX,6     ;循环次数为6
            SUB  AX,AX    ;AX清零
     NEXT:  ADD  AL,[BX]  ;这里用于低位的加法   
