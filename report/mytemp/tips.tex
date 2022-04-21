@@ -1,0 +1,75 @@
+% 添加快捷键
+fn+F1 搜索 keybingdings.json
+
+% 序号段落样例
+\begin{enumerate}
+    \item    
+\end{enumerate}
+
+% 表格样例
+\begin{table}[htbp]
+    \centering
+    \caption{题目 \label{tab:parameters}}
+    \bgroup\def\arraystretch{1.5}
+    \setlength{\tabcolsep}{4.5mm}
+      \begin{threeparttable}%要写注释，得加这行
+        \begin{tabular}{c|c}
+          \toprule
+          \textbf{11} & \textbf{22}\\
+          \midrule\midrule
+          \grayrow  & \\
+           & \\
+          \grayrow  & \\ 
+          \bottomrule
+        \end{tabular}
+
+        %注释
+        \begin{tablenotes}%注释开始
+        \footnotesize
+        \item[$\ast$] $\mathtt{rand}\ [a, b]\ (a<b)$ is a random value generated between $a$ and $b$.
+        \end{tablenotes}%注释结束
+      \end{threeparttable}%要写注释，得加这行
+
+    \egroup
+\end{table}
+
+% 插入图片样例
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/rlt7.png}
+    \caption{}
+    \label{fig:xxx}
+\end{figure}
+
+% 插入tikz图片
+\begin{figure}[hbpt]
+    \centering
+    \input{fig/usingmethod.tex}
+    \caption{图片}
+    \label{fig:xxx}
+\end{figure}
+
+% 并排两张图样例
+\begin{figure}[htbp]
+    \centering
+    \subfloat[原理图]{
+        \includegraphics[height=2cm]{fig/oscillation_init.png}
+        \label{subfig:oscillation_init}
+    }
+    \subfloat[等效图]{
+        \includegraphics[height=2cm]{fig/oscillation_real.png}
+        \label{subfig:oscillation_real}
+    }
+    \caption{}
+    \label{fig:oscillation_circuit}
+\end{figure}
+
+% 注意样例（idea/analyze 分别表示思考和分析）
+\begin{note}{题目}{}
+    内容
+\end{note}
+
+% 代码样例
+\begin{lstlisting}[language={[x86masm]Assembler},title=code]
+    mycode
+\end{lstlisting}

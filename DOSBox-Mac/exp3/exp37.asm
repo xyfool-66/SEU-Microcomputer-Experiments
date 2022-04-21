@@ -28,9 +28,11 @@ NEXT:   MOV AL,[SI]           ;一位位开始算，先从第一位开始
         MOV [DI],AH           ;把上一个调整产生的进位放到DI中
         LOOP NEXT
         ADD [DI],30H          ;换算成ASCII码
+
         MOV DX,OFFSET SUM     ;设置字符串的首地址为打印首地址
         MOV AH,09H
         INT 21H               ;打印
+        
         MOV AH,4CH
         INT 21H
 CODE ENDS

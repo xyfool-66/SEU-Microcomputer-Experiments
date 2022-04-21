@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             东南大学数电实验报告 LaTeX 模板
+%%                SEU-Circuit-Report.cls
+%% https://github.com/Teddy-van-Jerry/SEU_Digital_Report
+%% ======================================================
+%% 版本信息：
+%% v1.0 (Nov. 07, 2021)
+%% ------------------------------------------------------
+%% 模板制作：
+%% Teddy van Jerry, (me@teddy-van-jerry.org)
+%% * GitHub: https://github.com/Teddy-van-Jerry
+%% * Website: https://teddy-van-jerry.org
+%% * Blog: https://blog.teddy-van-jerry.org
+%% ------------------------------------------------------
+%% 使用说明：
+%% 1. 编译使用 XeLaTeX 和 Biber
+%% 2. 报告基本信息通过修改导言区以 exp 开头的命令
+%% 3. 参考文献位于 ref/ref.bib
+%% 4. 报告模板依据 MIT License 开源共享
+%% ------------------------------------------------------
+%% Copyright 2021 (c) Teddy van Jerry
+%%
+%% Permission is hereby granted, free of charge, to any
+%% person obtaining a copy of this software and
+%% associated documentation files (the "Software"), to
+%% deal in the Software without restriction, including
+%% without limitation the rights to use, copy, modify,
+%% merge, publish, distribute, sublicense, and/or sell
+%% copies of the Software, and to permit persons to whom
+%% the Software is furnished to do so, subject to the
+%% following conditions:
+%%
+%% The above copyright notice and this permission notice
+%% shall be included in all copies or substantial
+%% portions of the Software.
+%% 
+%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF
+%% ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+%% LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+%% FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+%% EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+%% FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+%% AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+%% FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+%% USE OR OTHER DEALINGS IN THE SOFTWARE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% 使用实验报告模板类（字体大小 11pt 约为五号字）
+\documentclass[11pt]{SEU-Digital-Report}
+
+%%%%%%%%%%%%%%%%%%%% 报告基本信息 %%%%%%%%%%%%%%%%%%%%
+\expno{X} % 实验序号
+\expname{XXXXX} % 实验名称
+\expauthor{薛宇飞} % 姓名
+\expID{04020235} % 学号
+\expmates{} % 同组
+\expmatesID{} % 学号（同组）
+\expmajor{信息工程} % 专业
+\explab{金智楼硬件实验室} % 实验室
+\expdate{\today} % 实验日期
+\expreportdate{\today} % 实验日期
+\expgrade{} % 成绩评定
+\exptutor{裴文江} % 评阅教师
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{xeCJK}
+\usepackage{threeparttable} %table添加注释
+\usepackage{colortbl}
+\newcommand{\grayrow}{\rowcolor[rgb]{ .906, .902, .902}}
+\usepackage{xcolor}  % tikz画图
+\usepackage{tikz}  
+\usetikzlibrary{arrows,shapes,chains} 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+
+%% 报告正文
+\begin{document}
+
+% 打印封面页
+\exptitlepage
+
+\tableofcontents
+\newpage
+
+\section{实验目的与内容}       
+\begin{enumerate}
+    \item 结合实验教材\cite{book,guide}，
+\end{enumerate}
+
+
+
+\section{实验总结}
+实验总结已随文附在“注意”、“思考”、“分析”中。
+
+% 打印参考文献
+\addcontentsline{toc}{section}{参考文献}
+\printbibliography
+
+\end{document}

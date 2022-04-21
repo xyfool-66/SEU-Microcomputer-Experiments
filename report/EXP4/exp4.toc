@@ -1,0 +1,16 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}实验目的与内容}{3}{section.1}%
+\contentsline {section}{\numberline {2}\leavevmode {\color {red}预习报告}}{3}{section.2}%
+\contentsline {subsection}{\numberline {1}实验任务}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2}实验原理}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {3}流程框图}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {4}实验可能用到的代码}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}思考题}{5}{section.3}%
+\contentsline {section}{\numberline {4}实验调试过程}{5}{section.4}%
+\contentsline {section}{\numberline {5}附加任务}{5}{section.5}%
+\contentsline {subsection}{\numberline {1}附加任务1}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {2}附加任务2}{5}{subsection.5.2}%
+\contentsline {subsection}{\numberline {3}附加任务3}{6}{subsection.5.3}%
+\contentsline {section}{\numberline {6}实验总结}{6}{section.6}%
+\contentsline {section}{参考文献}{6}{section.6}%

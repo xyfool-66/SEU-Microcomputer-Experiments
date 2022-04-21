@@ -1,6 +1,7 @@
     DATA   SEGMENT
     NUM    DB 22,46,32,72,84,16,156  ;定义数据段
     MAXN   DB ?  ;定义结果存放处
+    RESULT DB 'OK','$'
     DATA   ENDS
 
     MAIN SEGMENT 
@@ -16,5 +17,11 @@
            MOV  AL,[BX]   ;如果AL<[BX]，更新AL
     NEXT:  LOOP AGAIN     ;循环CX次
            MOV  MAXN,AL   ;将结果存入MAXN
+
+    PRINT: LEA  DX,RESULT
+           MOV  AH,09H
+           INT  21H
+     LAST: MOV  AH,4CH
+           INT  21H
     MAIN ENDS
     END START

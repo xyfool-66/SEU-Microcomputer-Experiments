@@ -1,0 +1,15 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'exp.blg'
+[63] biber-darwin:340> INFO - === Wed Apr 20, 2022, 23:13:07
+[77] Biber.pm:415> INFO - Reading 'exp.bcf'
+[185] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[197] Biber.pm:4340> INFO - Processing section 0
+[207] Biber.pm:4531> INFO - Looking for bibtex format file 'ref/ref.bib' for section 0
+[207] bibtex.pm:1689> INFO - LaTeX decoding ...
+[210] bibtex.pm:1494> INFO - Found BibTeX data source 'ref/ref.bib'
+[249] UCollate.pm:68> INFO - Overriding locale 'nil' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[249] UCollate.pm:68> INFO - Overriding locale 'nil' defaults 'variable = shifted' with 'variable = non-ignorable'
+[249] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'nil'
+[249] Biber.pm:4174> INFO - No sort tailoring available for locale 'nil'
+[250] bbl.pm:654> INFO - Writing 'exp.bbl' with encoding 'UTF-8'
+[251] bbl.pm:757> INFO - Output to exp.bbl
