@@ -6,11 +6,12 @@
 \contentsline {subsection}{\numberline {2}实验原理}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {3}流程框图}{4}{subsection.2.3}%
 \contentsline {subsection}{\numberline {4}实验可能用到的代码}{5}{subsection.2.4}%
-\contentsline {section}{\numberline {3}思考题}{5}{section.3}%
-\contentsline {section}{\numberline {4}实验调试过程}{5}{section.4}%
-\contentsline {section}{\numberline {5}附加任务}{5}{section.5}%
-\contentsline {subsection}{\numberline {1}附加任务1}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {2}附加任务2}{5}{subsection.5.2}%
-\contentsline {subsection}{\numberline {3}附加任务3}{6}{subsection.5.3}%
-\contentsline {section}{\numberline {6}实验总结}{6}{section.6}%
-\contentsline {section}{参考文献}{6}{section.6}%
+\contentsline {subsection}{\numberline {5}实验代码}{5}{subsection.2.5}%
+\contentsline {section}{\numberline {3}实验效果图}{11}{section.3}%
+\contentsline {section}{\numberline {4}思考题}{11}{section.4}%
+\contentsline {section}{\numberline {5}附加任务描述及完成}{12}{section.5}%
+\contentsline {subsection}{\numberline {1}附加任务1}{12}{subsection.5.1}%
+\contentsline {subsection}{\numberline {2}附加任务2}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {3}附加任务3}{15}{subsection.5.3}%
+\contentsline {section}{\numberline {6}实验总结}{16}{section.6}%
+\contentsline {section}{参考文献}{16}{section.6}%

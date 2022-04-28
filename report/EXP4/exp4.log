@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.30)  20 APR 2022 23:57
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.30)  27 APR 2022 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1677,11 +1677,11 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 \openout6 = `exp4.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'exp4.bbl' not found.
-
-No file exp4.bbl.
+Package biblatex Info: ... file 'exp4.bbl' found.
+ (./exp4.bbl)
 Package biblatex Info: Reference section=0 on input line 76.
 Package biblatex Info: Reference segment=0 on input line 76.
+
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.17} (current compat level: 1.11).
 
 
@@ -1753,12 +1753,6 @@ Underfull \hbox (badness 10000) detected at line 79
  [2
 
 ]
-
-LaTeX Warning: Citation 'book' on page 3 undefined on input line 86.
-
-
-LaTeX Warning: Citation 'guide' on page 3 undefined on input line 86.
-
 
 Package fontspec Warning: Font "STFangsong" does not contain requested Script
 (fontspec)                "CJK".
@@ -1836,40 +1830,52 @@ Package fontspec Info: Font family 'HeitiSCLight(0)' created for font 'Heiti
 (fontspec)             Light/BI/OT:language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-[4] [5]
+[4]
+Overfull \hbox (9.05711pt too wide) in paragraph at lines 164--165
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
 
-LaTeX Warning: Empty bibliography on input line 192.
+[5] [6] [7] [8] [9] [10]
+File: fig/rlt00003.png Graphic file (type bmp)
+<fig/rlt00003.png>
+File: fig/rlt00001.png Graphic file (type bmp)
+<fig/rlt00001.png>
+File: fig/rlt00002.png Graphic file (type bmp)
+<fig/rlt00002.png>
+ [11] [12] [13] [14] [15]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 586.
+
+
+Package biblatex Warning: Using fallback definition for \mkbibdateshort.
+(biblatex)                The command should be defined in the .lbx file.
+(biblatex)                If you see this message, the .lbx file could not be
+(biblatex)                loaded, is faulty or does not contain a definition
+(biblatex)                for \mkbibdateshort.
+
+
+Package biblatex Warning: Using fallback definition for \mkbibdateshort.
+(biblatex)                The command should be defined in the .lbx file.
+(biblatex)                If you see this message, the .lbx file could not be
+(biblatex)                loaded, is faulty or does not contain a definition
+(biblatex)                for \mkbibdateshort.
 
 
 AED: lastpage setting LastPage
-[6] (./exp4.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package rerunfilecheck Warning: File `exp4.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `exp4.out':
-(rerunfilecheck)             Before: A0662C94FCCDBE74C02FE17DDEC4B059;1148
-(rerunfilecheck)             After:  75FC324314C1FC19FF47CB992D87F186;1240.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                exp4
-(biblatex)                and rerun LaTeX afterwards.
-
+[16] (./exp4.aux)
+Package rerunfilecheck Info: File `exp4.out' has not changed.
+(rerunfilecheck)             Checksum: F9002784C5AE2469845940A96796B225;1362.
 Package logreq Info: Writing requests to 'exp4.run.xml'.
 \openout1 = `exp4.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56679 strings out of 476919
- 1348739 string characters out of 5821840
- 2444547 words of memory out of 5000000
- 75699 multiletter control sequences out of 15000+600000
+ 57016 strings out of 476919
+ 1362760 string characters out of 5821840
+ 2503114 words of memory out of 5000000
+ 76031 multiletter control sequences out of 15000+600000
  417188 words of font info for 141 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 116i,12n,118p,733b,1309s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 116i,12n,118p,733b,4642s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on exp4.pdf (6 pages).
+Output written on exp4.pdf (16 pages).
