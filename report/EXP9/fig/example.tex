@@ -1,0 +1,80 @@
+\begin{tikzpicture}[node distance = 2cm]
+    \definecolor{myblued}{RGB}{0,114,189}
+    \definecolor{myred}{RGB}{217,83,25}
+    \definecolor{myyellow}{RGB}{237,137,32}
+    \definecolor{mypurple}{RGB}{126,47,142}
+    \definecolor{myblues}{RGB}{77,190,238}
+    \definecolor{mygreen}{RGB}{32,134,48}
+      \pgfplotsset{
+        label style = {font=\fontsize{9pt}{7.2}\selectfont},
+        tick label style = {font=\fontsize{7pt}{7.2}\selectfont}
+      }
+    
+    \small % 字体大小
+    \tikzstyle{format}=[rectangle,draw,thin,fill=white]  % 定义语句块的颜色,形状和边
+    \tikzstyle{test}=[diamond,aspect=2,draw,thin]  % 定义条件块的形状,颜色
+    \tikzstyle{point}=[coordinate,on grid,]  % 像素点,用于连接转移线
+
+    %[node distance=10mm,auto,>=latex',thin,start chain=going below,every join/.style={norm},] 
+    %start chain=going below指明了流程图的默认方向，node distance=8mm则指明了默认的node距离。这些可以在定义node的时候更改，比如说 
+    %\node[point,right of=n3,node distance=10mm] (p0){};  
+    %这里声明了node p0，它在node n3 的右边，距离是10mm。
+    \node[format] (start){Start};
+    \node[format,below of=start,node distance=7mm] (define){Some defines};
+    \node[format,below of=define,node distance=7mm] (PCFinit){PCF8563 Initialize};
+    \node[format,below of=PCFinit,node distance=7mm] (DS18init){DS18 Initialize};
+    \node[format,below of=DS18init,node distance=7mm] (LCDinit){LCD Initialize};
+    \node[format,below of=LCDinit,node distance=7mm] (processtime){Processtime};
+    \node[format,below of=processtime,node distance=7mm] (keyinit){Key Initialize};
+    \node[test,below of=keyinit,node distance=15mm](setkeycheck){Check Set Key};
+    \node[point,left of=setkeycheck,node distance=18mm](point3){};
+    \node[format,below of=setkeycheck,node distance=15mm](readtime){Read Time};
+    \node[point,right of=readtime,node distance=15mm](point4){};
+    \node[format,below of=readtime](processtime1){Processtime};
+    \node[format,below of=processtime1](gettemp){Get Temperature};
+    \node[format,below of=gettemp](display){Display All Data};
+    \node[format,right of=setkeycheck,node distance=40mm](setsetflag){Set SetFlag=1};
+    \node[format,below of=setsetflag](setinit){Set Mode Initialize};
+    \node[format,below of=setinit](checksetting){Checksetting()};
+    \node[test,below of=checksetting,node distance=15mm](savecheck){Check Save Key};
+    \node[format,below of=savecheck,node distance=15mm](clearsetflag){Clear SetFlag=0};
+    \node[format,below of=clearsetflag](settime){Set Time};
+    \node[point,below of=display,node distance=7mm](point1){};
+    \node[point,below of=settime,node distance=7mm](point2){};
+    %\node[format] (n0) at(4,4){A}; 直接指定位置 
+    %定义完node之后进行连线,
+    %\draw[->] (n0.south) -- (n1); 带箭头实线
+    %\draw[-] (n0.south) -- (n1); 不带箭头实线
+    %\draw[<->] (n0.south) -- (n1.north);   双箭头
+    %\draw[<-,dashed] (n1.south) -- (n2.north); 带箭头虚线 
+    %\draw[<-] (n0.south) to node{Yes} (n1.north);  带字,字在箭头方向右边
+    %\draw[->] (n1.north) to node{Yes} (n0.south);  带字,字在箭头方向左边
+    %\draw[->] (n1.north) to[out=60,in=300] node{Yes} (n0.south);  曲线
+    %\draw[->,draw=red](n2)--(n1);  带颜色的线
+    \draw[->](start)--(define);
+    \draw[->](define)--(PCFinit);
+    \draw[->](PCFinit)--(DS18init);
+    \draw[->](DS18init)--(LCDinit);
+    \draw[->](LCDinit)--(processtime);
+    \draw[->](processtime)--(keyinit);
+    \draw[->](keyinit)--(setkeycheck);
+    \draw[->](setkeycheck)--node[above]{Yes}(setsetflag);
+    \draw[->](setkeycheck) --node[left]{No} (readtime);
+    \draw[->](readtime)--(processtime1);
+    \draw[->](processtime1)--(gettemp);
+    \draw[->](gettemp)--(display);
+    \draw[-](display)--(point1);
+    \draw[-](point1)-|(point3);
+    \draw[->](point3)--(setkeycheck.west);
+    \draw[->](setsetflag)--(setinit);
+    \draw[->](setinit)--(checksetting);
+    \draw[->](checksetting)--(savecheck);
+    \draw[->](savecheck)--node[left]{Yes}(clearsetflag);
+    \draw[->](savecheck.west)|-node[left]{No}(checksetting);
+    \draw[->](clearsetflag)--(settime);
+    \draw[-](settime)--(point2);
+    \draw[-](point2)-|(point4);
+    \draw[->](point4)--(readtime.east);
+
+\end{tikzpicture}
+    
