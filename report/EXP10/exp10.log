@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.30)  12 MAY 2022 16:36
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.30)  21 MAY 2022 13:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1850,7 +1850,7 @@ Package biblatex Warning: Using fallback definition for \mkbibdateshort.
 AED: lastpage setting LastPage
 [15] (./exp10.aux)
 Package rerunfilecheck Info: File `exp10.out' has not changed.
-(rerunfilecheck)             Checksum: 19BFCB49A6625A1A9BDE19A8B86FDE11;1310.
+(rerunfilecheck)             Checksum: BC707C9CD72FD1C4138CA6C04483F255;1246.
 Package logreq Info: Writing requests to 'exp10.run.xml'.
 \openout1 = `exp10.run.xml'.
 
@@ -1858,7 +1858,7 @@ Package logreq Info: Writing requests to 'exp10.run.xml'.
 Here is how much of TeX's memory you used:
  56784 strings out of 476919
  1348175 string characters out of 5821840
- 2489973 words of memory out of 5000000
+ 2489909 words of memory out of 5000000
  75798 multiletter control sequences out of 15000+600000
  417188 words of font info for 141 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191

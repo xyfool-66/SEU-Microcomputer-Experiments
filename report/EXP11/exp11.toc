@@ -1,0 +1,16 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {nil}{}
+\contentsline {section}{\numberline {1}实验目的与内容}{3}{section.1}%
+\contentsline {section}{\numberline {2}实验任务}{3}{section.2}%
+\contentsline {subsection}{\numberline {1}基本功能}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2}附加任务}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}实验原理}{3}{section.3}%
+\contentsline {section}{\numberline {4}实验代码}{6}{section.4}%
+\contentsline {section}{\numberline {5}实验结果}{14}{section.5}%
+\contentsline {section}{\numberline {6}附加任务说明}{15}{section.6}%
+\contentsline {subsection}{\numberline {1}附加任务1}{15}{subsection.6.1}%
+\contentsline {subsection}{\numberline {2}附加任务2-3}{16}{subsection.6.2}%
+\contentsline {subsection}{\numberline {3}附加任务4}{16}{subsection.6.3}%
+\contentsline {section}{\numberline {7}思考题}{17}{section.7}%
+\contentsline {section}{\numberline {8}实验思考}{18}{section.8}%
+\contentsline {section}{参考文献}{18}{section.8}%

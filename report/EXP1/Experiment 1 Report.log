@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.30)  13 APR 2022 21:44
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.7.30)  21 MAY 2022 12:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1456,7 +1456,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count553
 \@quotereset=\count554
-No file "Experiment 1 Report".aux.
+(./Experiment 1 Report.aux)
 \openout1 = `"Experiment 1 Report.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
@@ -1479,7 +1479,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
-ABD: EverySelectfont initializing macros
+ ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 73.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
@@ -1600,15 +1600,13 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 73.
 LaTeX Info: Redefining \pageref on input line 73.
 LaTeX Info: Redefining \nameref on input line 73.
+ (./Experiment 1 Report.out) (./Experiment 1 Report.out)
 \@outlinefile=\write7
 \openout7 = `"Experiment 1 Report.out"'.
 
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
 Package biblatex Info: Trying to load language 'nil'...
 Package biblatex Info: ... file 'nil.lbx' not found.
+
 
 Package biblatex Warning: Language 'nil' not supported.
 (biblatex)                Using dummy definitions on input line 73.
@@ -1628,11 +1626,11 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 \openout6 = `"Experiment 1 Report.bcf"'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '"Experiment 1 Report".bbl' not found.
-
-No file "Experiment 1 Report".bbl.
+Package biblatex Info: ... file '"Experiment 1 Report".bbl' found.
+ (./Experiment 1 Report.bbl)
 Package biblatex Info: Reference section=0 on input line 73.
 Package biblatex Info: Reference segment=0 on input line 73.
+
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.17} (current compat level: 1.11).
 
 
@@ -1697,23 +1695,7 @@ Underfull \hbox (badness 10000) detected at line 76
 
 [1
 
-]
-\tf@toc=\write8
-\openout8 = `"Experiment 1 Report.toc"'.
-
-
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 79.
-
-[2
-
-]
-
-LaTeX Warning: Citation 'book' on page 3 undefined on input line 84.
-
-
-LaTeX Warning: Citation 'guide' on page 3 undefined on input line 84.
-
+] (./Experiment 1 Report.toc
 
 Package fontspec Warning: Font "STFangsong" does not contain requested Script
 (fontspec)                "CJK".
@@ -1741,6 +1723,21 @@ Package fontspec Info: Font family 'STFangsong(0)' created for font
 (fontspec)             <->"STFangsong/OT:language=dflt;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 12.
+)
+\tf@toc=\write8
+\openout8 = `"Experiment 1 Report.toc"'.
+
+ [2
+
+]
+
+LaTeX Warning: Citation 'book' on page 3 undefined on input line 84.
+
+
+LaTeX Warning: Citation 'guide' on page 3 undefined on input line 84.
+
 
 LaTeX Warning: Citation 'mygit' on page 3 undefined on input line 88.
 
@@ -1751,11 +1748,9 @@ File: lstlang2.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang3.sty
 File: lstlang3.sty 2020/03/24 1.8d listings language file
 )
-
-LaTeX Warning: Reference `fig:rlt2' on page 3 undefined on input line 100.
-
 File: fig/rlt1.png Graphic file (type bmp)
 <fig/rlt1.png>
+
 
 Package fontspec Warning: Font "Heiti SC Light" does not contain requested
 (fontspec)                Script "CJK".
@@ -1786,37 +1781,15 @@ Package fontspec Info: Font family 'HeitiSCLight(0)' created for font 'Heiti
 (fontspec)             Light/BI/OT:language=dflt;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 111.
-
 [3]
-
-LaTeX Warning: Reference `tab:rlt2' on page 4 undefined on input line 146.
-
-
-LaTeX Warning: Reference `tab:task3' on page 4 undefined on input line 170.
-
-
 Overfull \hbox (7.96039pt too wide) in paragraph at lines 176--189
  [][] 
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 194.
-
 [4]
-
-LaTeX Warning: Reference `tab:task4' on page 5 undefined on input line 196.
-
-
-LaTeX Warning: Reference `fig:task4' on page 5 undefined on input line 231.
-
 File: fig/task4.png Graphic file (type bmp)
 <fig/task4.png>
-
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 238.
-
-[5]
+ [5]
 Overfull \hbox (4.16908pt too wide) in paragraph at lines 240--241
 []\TU/SongtiSCLight(0)/m/n/10.95 实 验 前 先 检 查 寄 存 器 情 况：| \TU/lmtt/m/n/10.95 DS=4013H, BX=0000H, SI=0000H\TU/SongtiSCLight(0)/m/n/10.95 ；|  初 始 化 数 据 段 情 况：| \TU/lmtt/m/n/10.95 DS:[1000H]=FF,
  []
@@ -1826,21 +1799,12 @@ Overfull \hbox (1.25665pt too wide) in paragraph at lines 258--259
 []\TU/SongtiSCLight(0)/m/n/10.95 设 \TU/lmtt/m/n/10.95 AX \TU/SongtiSCLight(0)/m/n/10.95 寄 存 器 中 的 内 容 为 \TU/lmtt/m/n/10.95 1111H\TU/SongtiSCLight(0)/m/n/10.95 ，| \TU/lmtt/m/n/10.95 BX \TU/SongtiSCLight(0)/m/n/10.95 寄 存 器 中 的 内 容 为 \TU/lmtt/m/n/10.95 2222H\TU/SongtiSCLight(0)/m/n/10.95 ，| \TU/lmtt/m/n/10.95 DS:0010H \TU/SongtiSCLight(0)/m/n/10.95 单 元 中 的 内 容 为 \TU/lmtt/m/n/10.95 3333H\TU/SongtiSCLight(0)/m/n/10.95 。|
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 259.
-
-[6]
-
-LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 290.
-
-[7]
-
-LaTeX Warning: Reference `fig:rlt7' on page 8 undefined on input line 295.
-
+[6] [7]
 File: fig/rlt7.png Graphic file (type bmp)
 <fig/rlt7.png>
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 303.
+
 
 LaTeX Warning: Citation 'mygit' on page 8 undefined on input line 304.
 
@@ -1849,27 +1813,15 @@ Overfull \hbox (16.9589pt too wide) in paragraph at lines 308--309
 \TU/SongtiSCLight(0)/m/n/10.95 方 法 为：|  通 过 \TU/lmtt/m/n/10.95 shift+cmd+. \TU/SongtiSCLight(0)/m/n/10.95 找 到 根 目 录 下\TU/lmtt/m/n/10.95 /Library/Preferences/DOSBox 0.74-3-1 Preferences
  []
 
-
-LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 316.
-
 [8]
 
 LaTeX Warning: Empty bibliography on input line 323.
 
 
-Package lastpage Warning: Rerun to get the references right on input line 325.
-
-
 AED: lastpage setting LastPage
-
-LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 325.
-
 [9] (./Experiment 1 Report.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `"Experiment 1 Report".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
@@ -1883,10 +1835,10 @@ Package logreq Info: Writing requests to '"Experiment 1 Report".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54402 strings out of 476919
- 1280549 string characters out of 5821840
- 2356874 words of memory out of 5000000
- 73461 multiletter control sequences out of 15000+600000
+ 54415 strings out of 476919
+ 1280807 string characters out of 5821840
+ 2358827 words of memory out of 5000000
+ 73464 multiletter control sequences out of 15000+600000
  421299 words of font info for 166 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  116i,12n,118p,750b,1443s stack positions out of 5000i,500n,10000p,200000b,80000s

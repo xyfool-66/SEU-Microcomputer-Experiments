@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'exp10.blg'
-[62] biber-darwin:340> INFO - === Thu May 12, 2022, 16:36:05
-[78] Biber.pm:415> INFO - Reading 'exp10.bcf'
-[188] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
-[199] Biber.pm:4340> INFO - Processing section 0
-[208] Biber.pm:4531> INFO - Looking for bibtex format file 'ref/ref.bib' for section 0
-[209] bibtex.pm:1689> INFO - LaTeX decoding ...
-[212] bibtex.pm:1494> INFO - Found BibTeX data source 'ref/ref.bib'
-[247] UCollate.pm:68> INFO - Overriding locale 'nil' defaults 'variable = shifted' with 'variable = non-ignorable'
-[247] UCollate.pm:68> INFO - Overriding locale 'nil' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[247] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'nil'
-[247] Biber.pm:4174> INFO - No sort tailoring available for locale 'nil'
-[249] bbl.pm:654> INFO - Writing 'exp10.bbl' with encoding 'UTF-8'
-[250] bbl.pm:757> INFO - Output to exp10.bbl
+[68] biber-darwin:340> INFO - === Sat May 21, 2022, 13:38:17
+[83] Biber.pm:415> INFO - Reading 'exp10.bcf'
+[211] Biber.pm:952> INFO - Found 2 citekeys in bib section 0
+[224] Biber.pm:4340> INFO - Processing section 0
+[234] Biber.pm:4531> INFO - Looking for bibtex format file 'ref/ref.bib' for section 0
+[235] bibtex.pm:1689> INFO - LaTeX decoding ...
+[238] bibtex.pm:1494> INFO - Found BibTeX data source 'ref/ref.bib'
+[279] UCollate.pm:68> INFO - Overriding locale 'nil' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[279] UCollate.pm:68> INFO - Overriding locale 'nil' defaults 'variable = shifted' with 'variable = non-ignorable'
+[279] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'nil'
+[279] Biber.pm:4174> INFO - No sort tailoring available for locale 'nil'
+[280] bbl.pm:654> INFO - Writing 'exp10.bbl' with encoding 'UTF-8'
+[281] bbl.pm:757> INFO - Output to exp10.bbl
